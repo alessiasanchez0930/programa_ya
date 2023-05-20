@@ -1,0 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  background-color: antiquewhite;
+}
+
+.regresar {
+  padding: 1rem 0 1rem 3rem;
+  width: 3rem;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-texto {
+  padding: 4rem;
+}
+
+.titulo {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  font-size: 1.3rem;
+}
