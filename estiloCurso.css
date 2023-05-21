@@ -129,16 +129,31 @@ img {
   height: 31rem;
   width: 31rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  animation: zoom 4s ease-in-out infinite alternate;
+ 
 }
 
-@keyframes zoom {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.2);
-  }
+
+.img-nosotros:hover {
+  transform: scale(1.1); 
+  transition: transform 0.3s ease-in-out; 
+}
+
+.img-nosotros::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3); 
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out; 
+}
+
+.img-nosotros:hover::after {
+  opacity: 1; 
 }
 
 .text-nosotros {
@@ -166,11 +181,12 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
 }
 
 .tituloprograma {
-  color: white;
-  font-size: 2em;
+  color: rgb(255, 255, 255);
+  font-size: 2.3em;
   padding-bottom: 1em;
   align-items: center;
   text-align: center;
@@ -182,19 +198,6 @@ img {
   align-items: center;
 }
 
-.btn-programas {
-  width: 100%;
-  background-color: rgb(87, 20, 211);
-  color: white;
-  padding: 1rem 5rem;
-  text-align: center;
-  border: none;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 10px;
-}
-
-
 .carta {
   height: 55vh;
   width: 30%;
@@ -204,58 +207,64 @@ img {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .carta:first-child {
-  background-image: linear-gradient(0deg,
-      rgba(0, 0, 0, 0.829),
-      rgba(0, 0, 0, 0.829)), url(https://static.platzi.com/media/blog/frontend-0f3c3aba-d976-49de-b1c2-9423c7116880.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://static.platzi.com/media/blog/frontend-0f3c3aba-d976-49de-b1c2-9423c7116880.jpg);
 }
 
-
 .carta:nth-child(2) {
-  background-image: linear-gradient(0deg,
-      rgba(0, 0, 0, 0.829),
-      rgba(0, 0, 0, 0.829)), url(https://i.pinimg.com/564x/60/16/3a/60163ad027d8ae0f8aed77667341fcfc.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.pinimg.com/564x/60/16/3a/60163ad027d8ae0f8aed77667341fcfc.jpg);
 }
 
 .carta:nth-child(3) {
-  background-image: linear-gradient(0deg,
-      rgba(0, 0, 0, 0.829),
-      rgba(0, 0, 0, 0.829)), url(https://i.pinimg.com/564x/e8/ef/9d/e8ef9d2cc69334b86179faceefe315ab.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.pinimg.com/564x/e8/ef/9d/e8ef9d2cc69334b86179faceefe315ab.jpg);
 }
 
+.carta:hover {
+  transform: translateY(-5px);
+}
 
 .titulocarta {
+  color:rgb(255, 255, 255);
   align-items: center;
   text-align: center;
   justify-content: center;
-  font-size: 2em;
-  margin-bottom: 1em;
-  color: white;
+  font-size: 2em
 }
 
-.parrafocarta {
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  font-size: 1em;
-  margin-bottom: 15px;
-  color: white;
+.parrafocarta{
+  color: rgb(255, 255, 255);
+ font-weight: bold;
 
 }
-
-.boton {
-  background-color: #007bff;
-  color: #fff;
+.btn-programas {
+  background-color: rgb(87, 20, 211);
+  color: white;
+  padding: 0.8rem 2.5rem;
   border: none;
-  padding: 1em 1em;
-  text-align: center;
   font-size: 1em;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
+
+.btn-programas:hover {
+  background-color: rgb(51, 0, 153);
+  transform: scale(1.1);
+}
+
+.btn-programas:active {
+  transform: scale(0.9);
+}
+
 
 
 #caracteristicas {
@@ -278,10 +287,21 @@ img {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.img-caracteristicas {
+
+  border-radius: 10px; 
+}
+
 .img-caracteristicas:hover {
   transform: scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  opacity: 0.8; 
 }
+
+.img-caracteristicas:active {
+  transform: scale(0.9); 
+}
+
 
 .content-caracteristicas {
   text-align: center;
@@ -373,19 +393,49 @@ footer {
   margin: 8px;
 }
 
-@media (min-width:1200px){
+@media (min-width:1800px){
+  #nosotros{
+   background-color: rgb(184, 217, 253) ;
+  }
+     
+ }
+
+
+@media (min-width:1920px){
    #nosotros{
-    background-color: gray ;
+    background-color: rgb(110, 177, 253) ;
+    font-weight: bold;
    }
       
   }
 
-  @media (min-width:1200px){
+
+
+  @media (min-width:1800px){
     #caracteristicas{
-     background-color: rgb(175, 173, 173) ;
+     background-color: rgb(137, 154, 164) ;
+     font-weight: bold;
     }
        
    }
+   
+  
+  @media (min-width:1920px){
+     #caracteristicas{
+      background-color:rgb(104, 127, 145) ;
+      font-weight: bold;
+     }
+        
+    }
+
+
+
+    
+
+    
+
+  
+   
 
 
 

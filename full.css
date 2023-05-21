@@ -28,8 +28,51 @@
 .titulo {
   font-size: 4rem;
   margin-bottom: 1.5rem;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fade-in 1s ease-in-out;
 }
 
 .text {
   font-size: 1.3rem;
+  color: #555;
+  animation: slide-up 1s ease-in-out;
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (min-width:1800px){
+  body{
+   background-color: rgb(246, 233, 181) ;
+   font-weight: bold;
+  }
+     
+ }
+
+
+@media (min-width:1920px){
+  body{
+   background-color:rgb(251, 234, 166) ;
+   
+  }
+     
+ }

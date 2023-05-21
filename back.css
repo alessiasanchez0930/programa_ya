@@ -21,6 +21,7 @@
   align-items: center;
 }
 
+
 .contenedor-texto {
   padding: 4rem;
 }
@@ -28,8 +29,52 @@
 .titulo {
   font-size: 4rem;
   margin-bottom: 1.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+.titulo:hover{
+  color: blueviolet;
 }
 
 .text {
   font-size: 1.3rem;
+  animation: slideIn 1s ease-in-out forwards;
 }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@media (min-width:1800px){
+  body{
+   background-color: rgb(195, 235, 251) ;
+   font-weight: bold;
+  }
+     
+ }
+
+
+@media (min-width:1920px){
+  body{
+   background-color:rgb(136, 219, 252) ;
+   
+  }
+     
+ }
